@@ -21,6 +21,11 @@ public class TaskService {
 		return taskRepository.findAll();
 	}
 
+	
+	@Transactional
+	public Iterable<Task> findByTaskStatus(String status) {
+		return taskRepository.findByStatus(status);
+	}
 
 	@Transactional
 	public Task findByIdOrTaskName(String idOrTaskName) {
@@ -43,16 +48,20 @@ public class TaskService {
 		return task;
 	}
 
+
+	
+
+
 	@Transactional
 	public Task createTask(CreateTaskRequest request) {
-		
+
 		Task task = new Task(request.getTaskName(), request.getDescription(), request.getStatus(), request.getAssignedUser());
 		return taskRepository.save(task);
 	}
 
 	@Transactional
 	public Task updateTask(Long id, CreateTaskRequest request) {
-		
+
 		try {
 			Optional<Task> optional = taskRepository.findById(id);            
 			Task  task = optional.get(); 		
@@ -60,7 +69,7 @@ public class TaskService {
 			task.setAssignedUser(request.getAssignedUser());
 			task.setDescription(request.getDescription());
 			task.setStatus(request.getStatus());
-			
+
 			return taskRepository.save(task);
 		} catch (Exception e) {
 			return null;
@@ -69,5 +78,5 @@ public class TaskService {
 
 
 
-	
+
 }

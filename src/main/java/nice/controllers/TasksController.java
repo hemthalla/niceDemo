@@ -45,4 +45,11 @@ public class TasksController {
 	}
 	
 	
+	@RequestMapping(value = "/tasks/status/{status}", method=RequestMethod.GET)
+	@ResponseBody
+	Iterable<Task> getTaskByStatus(@PathVariable("status") String status) {
+		return taskService.findByTaskStatus(status);
+	}
+	
+	
 }

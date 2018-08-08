@@ -14,8 +14,8 @@ import org.springframework.stereotype.Repository;
 public interface TaskRepository extends CrudRepository<Task, Long> {
 
 	Task findByTaskName(String taskName);
-	Task findByStatus(String status);
-	Task findByAssignedUser(String assignedUser);
+	Collection<Task> findByStatus(String status);
+	Collection<Task> findByAssignedUser(String assignedUser);
 	
 	Optional<Task> findById(Long id);
 	
