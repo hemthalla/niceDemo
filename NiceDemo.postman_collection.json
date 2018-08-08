@@ -1,0 +1,227 @@
+{
+	"info": {
+		"_postman_id": "a5376022-db84-4070-b8f3-d1e4d68b706a",
+		"name": "NiceDemo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"_postman_id": "7da5f4e1-33d7-470a-a304-05d2f5d1e650",
+			"name": "All Users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "localhost:8080/users",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "baf8b9e9-b28d-4080-9eeb-965f485c8127",
+			"name": "New User",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"userName\": \"niceUser10\"\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/users",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "b9d2a5c4-5446-4f3e-86ce-92ed84984964",
+			"name": "Update User",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"userName\": \"niceUser100\"\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/users/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "a2e30fe8-5735-40fa-a166-4afaf2363c0e",
+			"name": "Delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "localhost:8080/users/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "60c0f01b-ad6f-449f-889c-e95d74c0d329",
+			"name": "Create Tasks",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"taskName\":\"Development\",\r\n\t\"description\":\"Developing\",\r\n\t\"status\":\"In Progress\",\r\n\t\"assignedUser\":\"niceUser2\"\r\n}\r\n"
+				},
+				"url": {
+					"raw": "localhost:8080/tasks",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tasks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "eca4c1aa-5214-4124-92a9-3f76a30e51d7",
+			"name": "Get Tasks",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "localhost:8080/tasks",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tasks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "26ef2091-2df6-4ac1-8e22-6bdba33ac051",
+			"name": "Get specific Task",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "localhost:8080/tasks/5",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tasks",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "ab0cd7f5-82fa-4ece-804b-25fc0a4e0428",
+			"name": "Update Task",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\n       \n        \"taskName\": \"Testing\",\n        \"description\": \"Testing\",\n        \"status\": \"Not Started\",\n        \"assignedUser\": \"niceUser3\"\n    }"
+				},
+				"url": {
+					"raw": "localhost:8080/tasks/7",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tasks",
+						"7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "a91cab97-1d72-4446-8f8c-38ad7b715c4f",
+			"name": "Task based on Status",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "localhost:8080/tasks/status/Not Started",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tasks",
+						"status",
+						"Not Started"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
